@@ -32,12 +32,13 @@ if (logueado) {
     
       <>
         <h1>Inicio de Sesion</h1>
-        <input type = "text" name= "usuario" id="usuario" value={usuario} onChange={cambiarusuario}/>
+        <form name="calculator">
+        <input type = "textfield" name= "usuario" id="usuario" value={usuario} onChange={cambiarusuario}/>
         <br></br>
-        <input type = "password" name='clave' id='clave' value={clave} onChange={cambiarclave}/>
+        <input type = "textfield" name='clave' id='clave' value={clave} onChange={cambiarclave}/>
         <br></br>
-        <button onClick={Ingresar}>Ingresar</button>
-
+        <input type="button" name="ingresar" value="Ingresar" onClick={Ingresar} />
+        </form>
 
      </>
   )
