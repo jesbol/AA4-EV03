@@ -36,7 +36,7 @@ if (logueado) {
         <br></br>
         <input type = "password" name='clave' id='clave' value={clave} onChange={cambiarclave}/>
         <br></br>
-        <button onClick={Ingresar}>Ingresar</button>   
+        <button onClick={Ingresar}>Ingresar</button>
 
 
      </>
