@@ -16,14 +16,23 @@ function App() {
     setClave(evento.target.value)
   }
 
-  function Ingresar(){
-
+  async function Ingresar(){
+    const peticion = await fetch('http://localhost:3000/login?usuario='+usuario+'&clave='+clave)
+    if (peticion.ok) {
+      
+      alert(" sesion iniciada....")
+      setLogueado(true)
+    } else {
+      alert("...sesion no iniciada")
+    }
+    
+/*
       if (usuario=='admin' && clave=='admin') {
         setLogueado(true)
       }else{
         alert(" sesion no iniciada....")
-      }
-      
+      }     
+ */       
   }
 if (logueado) {
     return (<Pagina1 />)
@@ -32,14 +41,21 @@ if (logueado) {
     
       <>
         <h1>Inicio de Sesion</h1>
-        <form name="calculator">
+        
         <input type = "textfield" name= "usuario" id="usuario" value={usuario} onChange={cambiarusuario}/>
         <br></br>
         <input type = "textfield" name='clave' id='clave' value={clave} onChange={cambiarclave}/>
         <br></br>
         <input type="button" name="ingresar" value="Ingresar" onClick={Ingresar} />
-        </form>
-
+        
+        <h1>Registro</h1>
+        
+        <input type = "textfield" name= "usuario" id="usuario" value={usuario} onChange={cambiarusuario}/>
+        <br></br>
+        <input type = "textfield" name='clave' id='clave' value={clave} onChange={cambiarclave}/>
+        <br></br>
+        <input type="button" name="ingresar" value="Ingresar" onClick={Ingresar} />
+        
      </>
   )
 }
